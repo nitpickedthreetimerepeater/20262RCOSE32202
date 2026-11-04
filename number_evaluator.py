@@ -26,8 +26,10 @@ def main():
     elif number_type == "2" or number_type == "3":
         if number.denominator == 1:
             print("recommended: the number is an integer.")
+        elif abs(number) <= 5:
+            print("recommended: the fraction has a small absolute value.")
         else:
-            print("acceptable: the number is rational but not an integer.")
+            print("acceptable: a fraction with a smaller absolute value is preferred.")
 
     elif number_type == "4":
         if number in [2, 3, 4]:

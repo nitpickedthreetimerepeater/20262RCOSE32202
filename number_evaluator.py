@@ -1,3 +1,5 @@
+from fractions import Fraction
+
 def main():
     print("math number evaluator")
     print("1. answer")
@@ -7,25 +9,25 @@ def main():
     print("5. leading coefficient of polynomial")
 
     number_type = input("select number type: ")
-    number = float(input("enter a number: "))
+    number_input = input("enter a number: ")
+
+    try:
+        number = Fraction(number_input)
+    except (ValueError, ZeroDivisionError):
+        print("invalid input: enter an integer, decimal, or fraction.")
+        return
 
     if number_type == "1":
-        if number > 0 and number.is_integer():
+        if number > 0 and number.denominator == 1:
             print("recommended: the answer is a natural number.")
         else:
             print("not recommended: the answer should be a natural number.")
 
-    elif number_type == "2":
-        if number.is_integer():
+    elif number_type == "2" or number_type == "3":
+        if number.denominator == 1:
             print("recommended: the number is an integer.")
         else:
-            print("not recommended: integers are preferred in problems.")
-
-    elif number_type == "3":
-        if number.is_integer():
-            print("recommended: the number is an integer.")
-        else:
-            print("not recommended: integers are preferred in solutions.")
+            print("acceptable: the number is rational but not an integer.")
 
     elif number_type == "4":
         if number in [2, 3, 4]:

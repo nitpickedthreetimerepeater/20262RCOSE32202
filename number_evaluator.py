@@ -2,6 +2,7 @@ def main():
     print("math number evaluator")
     print("1. answer")
     print("2. number in problem")
+    print("3. number in solution")
 
     number_type = input("select number type: ")
     number = float(input("enter a number: "))
@@ -16,10 +17,17 @@ def main():
         if number.is_integer():
             print("recommended: the number is an integer.")
         else:
-            print("not recommended: integers are preferred.")
+            print("not recommended: integers are preferred in problems.")
+
+    elif number_type == "3":
+        if number.is_integer():
+            print("recommended: the number is an integer.")
+        else:
+            print("not recommended: integers are preferred in solutions.")
 
     else:
         print("invalid number type.")
+
 
 if __name__ == "__main__":
     main()

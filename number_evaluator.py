@@ -4,6 +4,7 @@ def main():
     print("2. number in problem")
     print("3. number in solution")
     print("4. base of exponential or logarithmic function")
+    print("5. leading coefficient of polynomial")
 
     number_type = input("select number type: ")
     number = float(input("enter a number: "))
@@ -33,6 +34,14 @@ def main():
             print("not recommended: 2, 3, or 4 is preferred.")
         else:
             print("invalid base: the base must be positive and not equal to 1.")
+
+    elif number_type == "5":
+        if number == 1:
+            print("recommended: the leading coefficient is 1.")
+        elif number == 0:
+            print("invalid: the leading coefficient cannot be zero.")
+        else:
+            print("not recommended: a leading coefficient of 1 is preferred.")
 
     else:
         print("invalid number type.")
